@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-
-
-
+import SongTable from './Components/SongTable/SongTable';
 
 function App() {
 
@@ -9,28 +7,8 @@ function App() {
 
   return (
     <div>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Album</th>
-            <th>Artist</th>
-            <th>Genre</th>
-            <th>ReleaseDate</th>
-          </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Drive My Car</td>
-              <td>Rubber Soul</td>
-              <td>The Beatles</td>
-              <td>Folk Rock</td>
-              <td>12/03/1965</td>
-            </tr>
-          </tbody>
-          </table>
+      <SongTable parentEntries = {entries}/>
+       
     </div>
   );
 }
