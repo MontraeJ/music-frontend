@@ -9,7 +9,7 @@ const[entries,setEntries] = useState([{title: "Drive My Car", album:"Rubber Soul
 const getAllSongs = async () => {
   try{
     let response = await axios.get('http://www.devcodecampmusiclibrary.com/api/music') 
-    setEntries(response.data)
+    //setEntries(response.data)
   }
   catch{
     console.log ("file not found") //is that supposed to say "file not found"?
@@ -20,9 +20,27 @@ getAllSongs ()
 })
 return (
     <div>
-      <SongTable parentEntries = {entries}/>
-       
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Music Library</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#">Title</a>
+        <a class="nav-link" href="#">Album</a>
+        <a class="nav-link" href="#">Artist</a>
+        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link disabled">Disabled</a>
+      </div>
     </div>
+  </div>
+</nav>
+      <SongTable parentEntries = {entries}/>
+      
+         </div>
   );
 }
 
